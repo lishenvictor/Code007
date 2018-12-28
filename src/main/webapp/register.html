@@ -98,18 +98,26 @@
 				  return false;
 			 }
 		  
-		  $.post("/user/register",{userName:$("#userName").val().trim(),password:$("#password").val().trim(),email:$("#email").val().trim(),vaptcha_token:myForm.vaptcha_token.value},function(result){
-			  if(result.success){
-				  alert("恭喜您，注册成功！");
-				  parent.reloadPage();
-			  }else{
-				  $("#errorInfo").text(result.errorInfo);
-				  if('人机验证失败！'==result.errorInfo){
-					  alert('人机验证失败！');
-					  window.location.reload();
+		  $.post("/user/register",
+			  {
+			      userName:$("#userName").val().trim(),
+				  password:$("#password").val().trim(),
+			      email:$("#email").val().trim(),
+			      vaptcha_token:myForm.vaptcha_token.value
+			  },
+			  function(result){
+				  if(result.success){
+					  alert("恭喜您，注册成功！");
+					  parent.reloadPage();
+				  }else{
+					  $("#errorInfo").text(result.errorInfo);
+					  if('人机验证失败！'==result.errorInfo){
+						  alert('人机验证失败！');
+						  window.location.reload();
+					  }
 				  }
-			  }
-		  },"json");
+		      },
+			  "json");
 		  
 		  
 	}

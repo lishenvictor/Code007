@@ -58,7 +58,7 @@
     				<li th:each="article:${articleList}" style="margin-bottom: 20px">
     					<span class="title"><a th:href="'/article/'+${article.id}" th:title="${article.name}" target="_blank" th:utext="${article.name}"></a></span>
 					  	<span class="summary" th:utext="'摘要: '+${article.content}+'...'"></span>
-					  	<span class="link"><a target="_blank" th:href="'/article/'+${article.id}" th:text="'http://download.news.com/articles/'+${article.id}"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font class="publishDate" th:text="'发布日期：'+${article.publishDateStr}"></font></span>
+					  	<span class="link"><a target="_blank" th:href="'/article/'+${article.id}" th:text="'http://download.blog.com/articles/'+${article.id}"></a>&nbsp;&nbsp;&nbsp;&nbsp;<font class="publishDate" th:text="'发布日期：'+${article.publishDateStr}"></font></span>
     				</li>
     			</ul>
     		</div>

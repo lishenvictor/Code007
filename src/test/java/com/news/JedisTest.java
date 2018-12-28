@@ -1,4 +1,4 @@
-package com.news;
+package com.blog;
 
 import redis.clients.jedis.Jedis;
 
